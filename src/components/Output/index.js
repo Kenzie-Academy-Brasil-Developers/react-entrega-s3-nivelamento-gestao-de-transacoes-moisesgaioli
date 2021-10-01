@@ -5,10 +5,11 @@ const Output = ({ output, setResult }) => {
     const handleClick = () => setResult(true)
 
     const totalQuantity = output.reduce((acc, product) => acc + product.quantity, 0)
-    const totalPrice = output.reduce((acc, product) => acc + product.price, 0)
+    const totalPrice = output.reduce((acc, product) => acc + (product.price * product.quantity), 0)
 
     return (
-        <>
+        <div>
+            <hr />
             <button onClick={handleClick}>  
                 Mostrar entrada
             </button>
@@ -20,14 +21,15 @@ const Output = ({ output, setResult }) => {
                     return <li>
                         <h3>Nome: {product.name} </h3>
                         <p> Quantidade: {product.quantity * -1} </p>
-                        <p> Preço: {product.price} </p>
+                        <p> Preço: R$ {product.price} </p>
                     </li>
                 } )}
             </ul>
 
             <p> Total de frutas vendidas = {totalQuantity * -1} </p>
-            <p> Valor total vendido = {totalPrice} </p>
-        </>
+            <p> Valor total vendido = R$ {totalPrice * -1} </p>
+            <hr />
+        </div>
     )
 }
 

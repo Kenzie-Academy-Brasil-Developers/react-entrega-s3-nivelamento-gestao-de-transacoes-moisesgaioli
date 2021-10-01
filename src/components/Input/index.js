@@ -7,7 +7,8 @@ const Input = ({ input, setResult }) => {
     const totalInput = input.reduce((acc, product) => acc + product.quantity, 0)
 
     return (
-        <>
+        <div>
+            <hr />
             <button onClick={handleClick}>
                 Mostrar saída
             </button>
@@ -19,13 +20,14 @@ const Input = ({ input, setResult }) => {
                     return <li  key={index}>
                         <h3>Nome: {product.name} </h3>
                         <p> Quantidade: {product.quantity} </p>
-                        <p> Preço: {product.price} </p>
+                        <p> Preço: R$ {product.price} </p>
                     </li>
                 } )}
             </ul>
 
             <p> Total de entrada de frutas = {totalInput} </p>
-        </>
+            <hr />
+        </div>
     )
 }
 

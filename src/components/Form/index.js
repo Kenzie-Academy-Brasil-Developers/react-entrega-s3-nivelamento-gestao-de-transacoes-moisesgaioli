@@ -26,6 +26,7 @@ const Form = ({ transactions, setTransactions, input, setInput, output, setOutpu
             <input type="number" placeholder="Quantidade" onChange={e => setQuantity(e.target.value)} />
             <input type="number" placeholder="Preço" onChange={e => setPrice(e.target.value)} />
             <button onClick={handleClick}> Confirmar </button>
+            <hr />
         </div>
     )
 }
